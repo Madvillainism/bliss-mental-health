@@ -9,6 +9,7 @@
 
 🎨 **Inspiración de Diseño:** [BLISS App UX/UI Design en Behance](https://www.behance.net/gallery/252294393/BLISS-app-UXUI-Design)  
 📁 **Gobernanza del Repositorio:** Proyecto gestionado bajo el estándar de desarrollo modular **SSD (Spec-Driven Development)** mediante agentes autónomos de código.
+<img width="555" height="439" alt="Screenshot_10" src="https://github.com/user-attachments/assets/e60dd3bc-ee09-4c2c-984c-b6d5484e986d" />
 
 ---
 
