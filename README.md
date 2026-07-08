@@ -1,9 +1,8 @@
 # 🍃 bliss. — Mindful Mental Health App Mockup
 
 [![Angular](https://img.shields.io/badge/Angular-19.0+-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0+-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Architecture](https://img.shields.io/badge/Architecture-Standalone_%26_Signals-007ACC?style=for-the-badge)](https://angular.dev/guide/signals)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
 > **bliss.** es un prototipo interactivo y mockup funcional de alta fidelidad diseñado para promover el bienestar y el ahorro consciente de energía mental. Este proyecto replica la experiencia UX/UI premium del aclamado diseño conceptual en Behance, adaptado a una arquitectura web moderna y fluida.
 
@@ -39,8 +38,7 @@ La interfaz utiliza una base minimalista Zen contemporánea combinada con desenf
 *   **Framework Core:** Angular 19+ (Componentes estrictamente *Standalone*).
 *   **Gestión de Estado:** `Signals` nativos (`signal()`, `computed()`, `model()`) para una reactividad síncrona sin sobrecarga de RxJS.
 *   **Sistema de Estilos:** Tailwind CSS con tokens de diseño personalizados en la configuración del núcleo.
-*   **Iconografía:** Lucide Angular (trazo lineal minimalista de `stroke-width: 1.5px`).
-*   **Persistencia:** En memoria local híbrida (`SQLite + JSON` / `LocalStorage`).
+*   **Iconografía:** FontAwesome (TEST), en realidad lleva Lucide Angular (trazo lineal minimalista de `stroke-width: 1.5px`).
 
 ---
 
