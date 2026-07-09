@@ -47,7 +47,7 @@ interface OnboardingSlide {
             </span>
           }
         </div>
-        <button (click)="nextSlide()"
+        <button (click)="isLastSlide() ? finish() : nextSlide()"
                 class="bg-bliss-dark text-white rounded-bliss-sm px-6 py-2.5 text-sm font-semibold
                        hover:bg-bliss-soft-dark active:scale-[0.97] transition-all duration-200">
           @if (isLastSlide()) {
