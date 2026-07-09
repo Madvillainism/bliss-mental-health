@@ -14,12 +14,12 @@ import { MockNavigationService } from '../../shared/services/mock-navigation.ser
           <i
             class="fa-solid {{ tab.icon }} text-lg transition-colors duration-200"
             [class.text-bliss-mauve]="nav.activeTabIndex() === tab.index"
-            [class.text-bliss-muted]="nav.activeTabIndex() !== tab.index"
+            [class.text-slate-500]="nav.activeTabIndex() !== tab.index"
           ></i>
           <span
             class="text-[10px] font-medium transition-colors duration-200"
             [class.text-bliss-mauve]="nav.activeTabIndex() === tab.index"
-            [class.text-bliss-muted]="nav.activeTabIndex() !== tab.index"
+            [class.text-slate-500]="nav.activeTabIndex() !== tab.index"
           >{{ tab.label }}</span>
           @if (nav.activeTabIndex() === tab.index) {
             <span class="absolute -top-0.5 w-1 h-1 rounded-full bg-bliss-mauve"></span>

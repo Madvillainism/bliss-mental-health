@@ -27,7 +27,7 @@ import { Router } from '@angular/router';
         Breathing in... Breathing out
       </p>
 
-      <div class="w-32 h-[2px] bg-bliss-lavender/30 rounded-full overflow-hidden">
+      <div class="w-32 h-[2px] bg-gray-200 rounded-full overflow-hidden">
         <div class="h-full bg-bliss-mauve rounded-full transition-all duration-[2500ms] ease-in-out"
              [style.width]="progressWidth">
         </div>
@@ -44,7 +44,8 @@ export class SplashComponent implements OnInit {
       this.progressWidth = '100%';
     });
     setTimeout(() => {
-      this.router.navigateByUrl('/login');
+      const target = localStorage.getItem('bliss_onboarding') ? '/login' : '/onboarding';
+      this.router.navigateByUrl(target);
     }, 2600);
   }
 }

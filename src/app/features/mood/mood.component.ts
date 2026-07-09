@@ -53,11 +53,15 @@ const HARDCODED_NOTES: Record<number, DayNote> = {
               <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.4" />
               <stop offset="100%" stop-color="#c4b5fd" stop-opacity="0.05" />
             </linearGradient>
+            <linearGradient id="chartLine" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#c4b5fd"/>
+              <stop offset="100%" stop-color="#a78bfa"/>
+            </linearGradient>
           </defs>
 
           <polyline
             [attr.points]="linePoints()"
-            fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            fill="none" stroke="url(#chartLine)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
           />
           <path [attr.d]="fillPath()" fill="url(#chartFill)" />
 

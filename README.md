@@ -38,7 +38,7 @@ La interfaz utiliza una base minimalista Zen contemporánea combinada con desenf
 *   **Framework Core:** Angular 19+ (Componentes estrictamente *Standalone*).
 *   **Gestión de Estado:** `Signals` nativos (`signal()`, `computed()`, `model()`) para una reactividad síncrona sin sobrecarga de RxJS.
 *   **Sistema de Estilos:** Tailwind CSS con tokens de diseño personalizados en la configuración del núcleo.
-*   **Iconografía:** FontAwesome (TEST), en realidad lleva Lucide Angular (trazo lineal minimalista de `stroke-width: 1.5px`).
+*   **Iconografía:** FontAwesome + custom inline SVG icons for mood buttons and onboarding illustrations.
 
 ---
 
@@ -58,3 +58,70 @@ spec/
 │   └── 003-user-persona-form # Dashboard emocional y gestor de toas flotantes
 ├── CONTEXT.md                # Estado actual y restricciones activas globales
 └── AGENTS.md                 # Registro de subagentes del ecosistema OpenCode
+```
+
+---
+
+## Screens (Route Map)
+
+| Screen | Route | Description |
+|--------|-------|-------------|
+| Onboarding | `/onboarding` | 3-slide carousel (first visit only): Find Your Inner Peace → Track Your Journey → Grow Together. Slide dots, Skip button, Next/Get Started. Persists `bliss_onboarding` flag. |
+| Splash | `/splash` | Full-screen radial gradient, SVG lotus isotipo, "bliss." wordmark, progress bar. Auto-routes to onboarding (first visit) or login. |
+| Login | `/login` | Email/password inputs with icons, Sign In button, Google OAuth button, register toggle. |
+| Dashboard | `/dashboard` | Time-based greeting, SVG initials avatar, 5 mood cards (Radiant/Good/Okay/Low/Stressed) with custom SVG icons in a grid layout, activity cards. Stressed mood triggers support notification. |
+| Mood | `/mood` | SVG 7-day line chart with gradient, mini calendar heat map (reads from LocalStorage), day detail card with notes. |
+| Community | `/community` | Support group cards (Anxiety Support Circle, Mindfulness for Beginners) with overlapping avatars + Join Room button, resource article cards. |
+| Profile | `/profile` | Avatar ring with gradient, name, streak counter, goals progress bars, settings toggles (persisted). |
+
+## Services
+
+| Service | Role |
+|---------|------|
+| `MockAuthService` | Login/register/logout with LocalStorage-backed user, computed `isAuthenticated` signal. |
+| `MockNotificationService` | `emit()`, `dismiss()`, `emitSupportEmail()` — toast notifications with 5s auto-dismiss. |
+| `MockNavigationService` | Bottom nav tab state and routing. |
+
+## Design System (Purple Palette)
+
+Custom Tailwind tokens in `tailwind.config.js`:
+- `bg-bliss-lavender` / `bg-bliss-mauve` — primary accent
+- `bg-bliss-soft-dark` / `bg-bliss-dark` — text and active states
+- `bg-bliss-cream` — page backgrounds
+- `rounded-bliss` (1.5rem) — card radius
+- `font-bliss-display` (Outfit) — display type
+- `animate-banner-in` / `animate-fade-in` / `animate-slide-up` — micro-interactions
+
+## Quick Start
+
+```bash
+ng serve        # Dev server at http://localhost:4200
+ng build        # Production build to dist/
+```
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── core/guards/              — auth.guard.ts
+│   ├── features/
+│   │   ├── onboarding/           — onboarding.component.ts
+│   │   ├── splash/               — splash.component.ts
+│   │   ├── login/                — login.component.ts
+│   │   ├── dashboard/            — dashboard.component.ts
+│   │   ├── mood/                 — mood.component.ts
+│   │   ├── community/            — community.component.ts
+│   │   └── profile/              — profile.component.ts
+│   ├── shared/
+│   │   ├── services/             — MockAuth, MockNotification, MockNavigation
+│   │   └── components/           — notification-banner.component.ts
+│   ├── shell/                    — shell.component.ts, header, nav-bar
+│   ├── app.config.ts
+│   ├── app.routes.ts
+│   └── app.component.ts
+├── styles.css                    — Tailwind directives
+├── tailwind.config.js            — Custom design tokens
+├── angular.json
+└── spec/                         — SSD specifications
+```

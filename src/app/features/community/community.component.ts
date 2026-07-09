@@ -45,8 +45,8 @@ interface Resource {
                 <span class="text-[10px] text-bliss-muted ml-2">{{ group.members }} members</span>
               </div>
 
-              <button class="text-[11px] font-semibold text-bliss-mauve bg-bliss-lavender/20 px-4 py-1.5 rounded-full
-                             hover:bg-bliss-lavender/30 active:scale-95 transition-all">
+              <button class="text-[11px] font-semibold text-bliss-soft-dark bg-bliss-lavender/30 px-4 py-1.5 rounded-full
+                             hover:bg-bliss-lavender/40 active:scale-95 transition-all">
                 Join Room
               </button>
             </div>

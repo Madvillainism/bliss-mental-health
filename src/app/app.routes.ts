@@ -9,6 +9,10 @@ export const routes: Routes = [
     loadComponent: () => import('./features/splash/splash.component').then(m => m.SplashComponent),
   },
   {
+    path: 'onboarding',
+    loadComponent: () => import('./features/onboarding/onboarding.component').then(m => m.OnboardingComponent),
+  },
+  {
     path: 'login',
     loadComponent: () => import('./features/login/login.component').then(m => m.LoginComponent),
   },

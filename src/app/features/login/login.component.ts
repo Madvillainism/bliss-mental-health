@@ -8,7 +8,7 @@ import { MockAuthService } from '../../shared/services/mock-auth.service';
   template: `
     <div class="fixed inset-0 flex items-center justify-center p-6"
          style="background: radial-gradient(ellipse at center, #ddd6fe 0%, #ffffff 70%);">
-      <div class="w-full max-w-sm bg-white/80 backdrop-blur-xl rounded-bliss-lg shadow-2xl p-8">
+      <div class="w-full max-w-sm bg-white/85 backdrop-blur-md rounded-bliss-lg shadow-xl shadow-slate-100 p-8">
 
         <h1 class="text-2xl font-bliss-display font-semibold text-bliss-dark text-center mb-2">
           Welcome back,<br />take a deep breath.
@@ -18,23 +18,29 @@ import { MockAuthService } from '../../shared/services/mock-auth.service';
         </p>
 
         <div class="space-y-4">
-          <input
-            type="email"
-            placeholder="Email address"
-            [value]="email()"
-            (input)="email.set($any($event.target).value)"
-            class="w-full bg-gray-50 rounded-2xl px-4 py-3 text-sm text-bliss-dark placeholder-bliss-muted
-                   border border-bliss-border focus:outline-none focus:ring-2 focus:ring-bliss-mauve/30 focus:border-bliss-mauve transition-all"
-          />
+          <div class="relative">
+            <i class="fa-regular fa-envelope absolute left-3 top-1/2 -translate-y-1/2 text-sm text-bliss-muted pointer-events-none"></i>
+            <input
+              type="email"
+              placeholder="Email address"
+              [value]="email()"
+              (input)="email.set($any($event.target).value)"
+              class="w-full bg-gray-50 rounded-2xl pl-10 pr-4 py-3 text-sm text-bliss-dark placeholder-bliss-muted
+                     border border-bliss-border focus:outline-none focus:ring-2 focus:ring-bliss-mauve/30 focus:border-bliss-mauve transition-all"
+            />
+          </div>
 
-          <input
-            type="password"
-            placeholder="Password"
-            [value]="password()"
-            (input)="password.set($any($event.target).value)"
-            class="w-full bg-gray-50 rounded-2xl px-4 py-3 text-sm text-bliss-dark placeholder-bliss-muted
-                   border border-bliss-border focus:outline-none focus:ring-2 focus:ring-bliss-mauve/30 focus:border-bliss-mauve transition-all"
-          />
+          <div class="relative">
+            <i class="fa-regular fa-lock absolute left-3 top-1/2 -translate-y-1/2 text-sm text-bliss-muted pointer-events-none"></i>
+            <input
+              type="password"
+              placeholder="Password"
+              [value]="password()"
+              (input)="password.set($any($event.target).value)"
+              class="w-full bg-gray-50 rounded-2xl pl-10 pr-4 py-3 text-sm text-bliss-dark placeholder-bliss-muted
+                     border border-bliss-border focus:outline-none focus:ring-2 focus:ring-bliss-mauve/30 focus:border-bliss-mauve transition-all"
+            />
+          </div>
 
           @if (error()) {
             <p class="text-xs text-bliss-rose text-center">{{ error() }}</p>
